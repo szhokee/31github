@@ -82,53 +82,53 @@ attempts_list = []
 
 def show_score():
     if not attempts_list:
-        print("There is currently no high score, it's yours for the taking!")
+        print("На данный момент нет высших баллов, они ваши!")
     else:
-        print(f"The current high score is {min(attempts_list)} attempts")
+        print(f"Текущий высший балл - {min(attempts_list)} попыток")
 
 def start_game():
     random_number = random.randint(1, 10)
-    print("Hello traveler! Welcome to the guessing game!")
+    print("Привет, путешественник! Добро пожаловать в игру 'Угадай число'!")
 
-    player_name = input("What is your name? ")
-    wanna_play = input(f"Hi, {player_name}, would you like to play the guessing game? (Enter Yes/No) ")
+    player_name = input("Как вас зовут? ")
+    wanna_play = input(f"Привет, {player_name}, хотите сыграть в игру 'Угадай число'? (Введите Yes/No) ")
 
     attempts = 0
     show_score()
 
     while wanna_play.lower() == "yes":
         try:
-            guess = int(input("Pick a number between 1 and 10 "))
+            guess = int(input("Выберите число от 1 до 10: "))
 
             if guess < 1 or guess > 10:
-                raise ValueError("Please guess a number within the given range")
+                raise ValueError("Угадайте число в заданном диапазоне")
 
             if guess == random_number:
-                print("Nice! You got it!")
+                print("Молодец! Вы угадали!")
                 attempts += 1
                 attempts_list.append(attempts)
-                print(f"It took you {attempts} attempts")
+                print(f"Это заняло у вас {attempts} попыток")
 
-                play_again = input("Would you like to play again? (Enter Yes/No) ")
+                play_again = input("Хотели бы вы сыграть еще раз? (Введите Yes/No): ")
                 attempts = 0
                 show_score()
                 random_number = random.randint(1, 10)
 
                 if play_again.lower() == "no":
-                    print("That's cool, have a good one!")
+                    print("Это круто, удачи!")
                     break
             elif guess > random_number:
-                print("It's lower")
+                print("Это меньше")
                 attempts += 1
             elif guess < random_number:
-                print("It's higher")
+                print("Это больше")
                 attempts += 1
 
         except ValueError as err:
-            print(f"Oh no! That is not a valid value. Try again... ({err})")
+            print(f"О нет! Это не правильное значение. Попробуйте еще раз... ({err})")
 
     else:
-        print("That's cool, have a good one!")
+        print("Это круто, удачи!")
 
 if __name__ == '__main__':
     start_game()
