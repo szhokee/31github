@@ -144,12 +144,12 @@ min_val = 1
 max_val = 6
 
 # The variable that stores the user’s decision
-roll_again = "yes"
+roll_again = "Да"
 
 # The dice roll loop if the user wants to continue
-while roll_again.lower() == "yes" or roll_again.lower() == "y":
-    print("Dices rolling...")
-    print("The values are:")
+while roll_again.lower() == "да" or roll_again.lower() == "да":
+    print("Кубики катятся...")
+    print("Значения следующие:")
     
     # Printing the randomly generated variable of the first dice
     print(random.randint(min_val, max_val))
@@ -158,6 +158,6 @@ while roll_again.lower() == "yes" or roll_again.lower() == "y":
     print(random.randint(min_val, max_val))
     
     # Here the user enters yes or y to continue and any other input ends the program
-    roll_again = input("Roll the Dices Again? ")
+    roll_again = input("Снова бросать кости? ")
 
 # End of the program
