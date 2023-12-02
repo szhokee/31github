@@ -1,140 +1,163 @@
-import random
+# import random
 
-board = [str(i) for i in range(1, 10)]
-player, computer = '', ''
+# board = [str(i) for i in range(1, 10)]
+# player, computer = '', ''
 
-moves = ((1, 7, 3, 9), (5,), (2, 4, 6, 8))
-winners = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6))
-tab = range(1, 10)
+# moves = ((1, 7, 3, 9), (5,), (2, 4, 6, 8))
+# winners = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6))
+# tab = range(1, 10)
 
-def print_board():
-    for i, char in enumerate(board, 1):
-        end = ' | ' if i % 3 != 0 else '\n'
-        end = '---------\n' if i != 1 else end
-        print(char if char in ('X', 'O') else i, end=end)
+# def print_board():
+#     for i, char in enumerate(board, 1):
+#         end = ' | ' if i % 3 != 0 else '\n'
+#         end = '---------\n' if i != 1 else end
+#         print(char if char in ('X', 'O') else i, end=end)
 
-def select_char():
-    return random.sample(('X', 'O'), 2)
+# def select_char():
+#     return random.sample(('X', 'O'), 2)
 
-def can_move(move):
-    return 1 <= move <= 9 and board[move-1] == str(move)
+# def can_move(move):
+#     return 1 <= move <= 9 and board[move-1] == str(move)
 
-def can_win(player, move):
-    places = [i for i, x in enumerate(board) if x == player]
-    return any(all(ix in places for ix in tup) for tup in winners)
+# def can_win(player, move):
+#     places = [i for i, x in enumerate(board) if x == player]
+#     return any(all(ix in places for ix in tup) for tup in winners)
 
-def make_move(player, move, undo=False):
-    if can_move(move):
-        board[move-1] = player
-        win = can_win(player, move)
-        if undo:
-            board[move-1] = str(move)
-        return True, win
-    return False, False
+# def make_move(player, move, undo=False):
+#     if can_move(move):
+#         board[move-1] = player
+#         win = can_win(player, move)
+#         if undo:
+#             board[move-1] = str(move)
+#         return True, win
+#     return False, False
 
-def computer_move():
-    for i in range(1, 10):
-        if make_move(computer, i, True)[1]:
-            return make_move(computer, i)
-    for i in range(1, 10):
-        if make_move(player, i, True)[1]:
-            return make_move(computer, i)
-    for tup in moves:
-        for mv in tup:
-            if can_move(mv):
-                return make_move(computer, mv)
+# def computer_move():
+#     for i in range(1, 10):
+#         if make_move(computer, i, True)[1]:
+#             return make_move(computer, i)
+#     for i in range(1, 10):
+#         if make_move(player, i, True)[1]:
+#             return make_move(computer, i)
+#     for tup in moves:
+#         for mv in tup:
+#             if can_move(mv):
+#                 return make_move(computer, mv)
 
-def space_exist():
-    return any(x.isdigit() for x in board)
+# def space_exist():
+#     return any(x.isdigit() for x in board)
 
-player, computer = select_char()
-print(f'Игрок - это [{player}] а это компьютер [{computer}]')
+# player, computer = select_char()
+# print(f'Игрок - это [{player}] а это компьютер [{computer}]')
 
-result = '%%% Deuce ! %%%'
+# result = '%%% Deuce ! %%%'
 
-while space_exist():
-    print_board()
-    print('#Сделайте свой ход! [1-9] : ', end='')
-    move = int(input())
-    moved, won = make_move(player, move)
+# while space_exist():
+#     print_board()
+#     print('#Сделайте свой ход! [1-9] : ', end='')
+#     move = int(input())
+#     moved, won = make_move(player, move)
     
-    if not moved:
-        print(' >> Неверный номер! Попробуйте еще раз! ')
-        continue
-    7
-    if won:
-        result = '*** Поздравляем! Вы выиграли! ***'
-        break
-    elif computer_move()[1]:
-        result = '=== Вы проиграли ! =='
-        break
+#     if not moved:
+#         print(' >> Неверный номер! Попробуйте еще раз! ')
+#         continue
+#     7
+#     if won:
+#         result = '*** Поздравляем! Вы выиграли! ***'
+#         break
+#     elif computer_move()[1]:
+#         result = '=== Вы проиграли ! =='
+#         break
 
-print_board()
-print(result)
-
-
-#_______________________________________________________________________________
+# print_board()
+# print(result)
 
 
-import random
+# #_______________________________________________________________________________
 
-attempts_list = []
 
-def show_score():
-    if not attempts_list:
-        print("На данный момент нет высших баллов, они ваши!")
-    else:
-        print(f"Текущий высший балл - {min(attempts_list)} попыток")
+# import random
 
-def start_game():
-    random_number = random.randint(1, 10)
-    print("Привет, путешественник! Добро пожаловать в игру 'Угадай число'!")
+# attempts_list = []
 
-    player_name = input("Как вас зовут? ")
-    wanna_play = input(f"Привет, {player_name}, хотите сыграть в игру 'Угадай число'? (Введите Yes/No) ")
+# def show_score():
+#     if not attempts_list:
+#         print("На данный момент нет высших баллов, они ваши!")
+#     else:
+#         print(f"Текущий высший балл - {min(attempts_list)} попыток")
 
-    attempts = 0
-    show_score()
+# def start_game():
+#     random_number = random.randint(1, 10)
+#     print("Привет, путешественник! Добро пожаловать в игру 'Угадай число'!")
 
-    while wanna_play.lower() == "yes":
-        try:
-            guess = int(input("Выберите число от 1 до 10: "))
+#     player_name = input("Как вас зовут? ")
+#     wanna_play = input(f"Привет, {player_name}, хотите сыграть в игру 'Угадай число'? (Введите Yes/No) ")
 
-            if guess < 1 or guess > 10:
-                raise ValueError("Угадайте число в заданном диапазоне")
+#     attempts = 0
+#     show_score()
 
-            if guess == random_number:
-                print("Молодец! Вы угадали!")
-                attempts += 1
-                attempts_list.append(attempts)
-                print(f"Это заняло у вас {attempts} попыток")
+#     while wanna_play.lower() == "yes":
+#         try:
+#             guess = int(input("Выберите число от 1 до 10: "))
 
-                play_again = input("Хотели бы вы сыграть еще раз? (Введите Yes/No): ")
-                attempts = 0
-                show_score()
-                random_number = random.randint(1, 10)
+#             if guess < 1 or guess > 10:
+#                 raise ValueError("Угадайте число в заданном диапазоне")
 
-                if play_again.lower() == "no":
-                    print("Это круто, удачи!")
-                    break
-            elif guess > random_number:
-                print("Это меньше")
-                attempts += 1
-            elif guess < random_number:
-                print("Это больше")
-                attempts += 1
+#             if guess == random_number:
+#                 print("Молодец! Вы угадали!")
+#                 attempts += 1
+#                 attempts_list.append(attempts)
+#                 print(f"Это заняло у вас {attempts} попыток")
 
-        except ValueError as err:
-            print(f"О нет! Это не правильное значение. Попробуйте еще раз... ({err})")
+#                 play_again = input("Хотели бы вы сыграть еще раз? (Введите Yes/No): ")
+#                 attempts = 0
+#                 show_score()
+#                 random_number = random.randint(1, 10)
 
-    else:
-        print("Это круто, удачи!")
+#                 if play_again.lower() == "no":
+#                     print("Это круто, удачи!")
+#                     break
+#             elif guess > random_number:
+#                 print("Это меньше")
+#                 attempts += 1
+#             elif guess < random_number:
+#                 print("Это больше")
+#                 attempts += 1
 
-if __name__ == '__main__':
-    start_game()
+#         except ValueError as err:
+#             print(f"О нет! Это не правильное значение. Попробуйте еще раз... ({err})")
+
+#     else:
+#         print("Это круто, удачи!")
+
+# if __name__ == '__main__':
+#     start_game()
 
 
 #__________________________________________________________________________________________________
 
 
-print("Hello world")
+import random 
+
+# Enter the minimum and maximum limits of the dice rolls below
+min_val = 1
+max_val = 6
+
+# The variable that stores the user’s decision
+roll_again = "yes"
+
+# The dice roll loop if the user wants to continue
+while roll_again.lower() == "yes" or roll_again.lower() == "y":
+    print("Dices rolling...")
+    print("The values are:")
+    
+    # Printing the randomly generated variable of the first dice
+    print(random.randint(min_val, max_val))
+    
+    # Printing the randomly generated variable of the second dice
+    print(random.randint(min_val, max_val))
+    
+    # Here the user enters yes or y to continue and any other input ends the program
+    roll_again = input("Roll the Dices Again? ")
+
+# End of the program
