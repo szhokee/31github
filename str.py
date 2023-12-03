@@ -78,9 +78,30 @@ parts = sentence.partition("a")
 print(parts)
 
 #___________________________________________________
+
+sentence = "This car is my car"
+last_index = sentence.rfind("car")
+
+print(last_index) 
+
 #___________________________________________________
+
+print("Hello".rjust(20, "-"))
+
 #___________________________________________________
+
+sentence = "This car is my car, you cannot drive it"
+
+parts = sentence.rpartition("car")
+print(parts)
+
 #___________________________________________________
+
+items = "apple, banana, cherry"
+split_items = items.rsplit(",", 1)
+
+print(split_items)
+
 #___________________________________________________
 #___________________________________________________
 #___________________________________________________
