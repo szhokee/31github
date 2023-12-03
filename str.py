@@ -52,9 +52,31 @@ print(sentence.isalnum())
 
 #___________________________________________________
 
+words = ["This", "is", "a", "test"]
+sentence = " ".join(words)
+
+print(sentence)
+
 #___________________________________________________
+
+print("Hello".ljust(20, "-"))
+
+
 #___________________________________________________
+
+sentence = "Hello World"
+trans_table = sentence.maketrans("o", "x")
+
+print(sentence.translate(trans_table))
+
+
 #___________________________________________________
+
+sentence = "This is a test"
+parts = sentence.partition("a")
+
+print(parts)
+
 #___________________________________________________
 #___________________________________________________
 #___________________________________________________
