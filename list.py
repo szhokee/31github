@@ -27,8 +27,26 @@ for sublist in nested_list:
     for item in sublist:
         print(item)
 #________________________________________________________
+
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for sublist in nested_list:
+    print(*sublist, sep=",")
 #________________________________________________________
+
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+result = [item for sublist in nested_list for item in sublist]
+
 #________________________________________________________
+
+import pprint
+ 
+pokemon_list = ['Pikachu', 'Abra', 'Charmander']
+pprint.pprint(pokemon_list)
 #________________________________________________________
+
+import json
+ 
+pokemon_list = ['Pikachu', 'Abra', 'Charmander']
+print(json.dumps(pokemon_list))
 #________________________________________________________
 #________________________________________________________
