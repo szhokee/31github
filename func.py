@@ -47,6 +47,21 @@ y = func()
 print ("\nThe value of a*b is", y(10))
 
 #______________________________________________________________________________
+
+class Greetings:
+    def good_morning(name):
+        print(f'Good morning {name}')
+        
+    def good_afternoon(name):
+        print(f'Good afternoon {name}')
+        
+    def good_evening(name):
+        print(f'Good evening {name}')
+        
+        
+Greetings.good_afternoon('John')
+Greetings.good_morning('Peter')
+Greetings.good_evening('Jane') 
 #______________________________________________________________________________
 #______________________________________________________________________________
 #______________________________________________________________________________
