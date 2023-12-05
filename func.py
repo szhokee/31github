@@ -15,3 +15,14 @@ def learn_to_code():
     learn_what_language()
 
 learn_to_code()
+
+#______________________________________________________________________________
+
+def divNum(a, b):
+    if b != 0:
+        return a/b
+    else:
+        return 0
+
+print(divNum(4, 2))
+print(divNum(2, 0)) 
