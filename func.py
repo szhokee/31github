@@ -125,4 +125,36 @@ s.show_courses()
 # Literature
 # Mathematics 
 #______________________________________________________________________________
+
+import datetime as dt
+
+class Student:
+    def __init__(self, first, last, age, major):
+        self.first = first 
+        self.last = last
+        self.age = age
+        self.major = major
+        self.courses = [] 
+    
+    def profile(self):
+        print(f"Student name {self.first + ' ' + self.last}")
+        print(f"Student age: {self.age}")
+        print(f"Major: {self.major}")
+        
+        
+    def enrol(self, course):
+        self.courses.append(course)
+        print(f"enrolled {self.first} in {course}")
+        
+    
+    def show_courses(self):
+        print(f"{self.first + ''  + self.last} is taking the following courses")
+        for course in self.courses:
+            print(course)
+    
+    
+    def academic_year():
+        now = dt.datetime.now()
+        s = now.year, now.year -1 
+        print(f"Current academic year is { str(s[0]) + '/' + str(s[1]) }")
 #______________________________________________________________________________
