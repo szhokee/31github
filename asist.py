@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 from langchain.document_loaders import YoutubeLoader
 from langchain.schema import Document
 
+from youtuber.api import fetch_youtube_captions
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
