@@ -5,6 +5,9 @@ from langchain.document_loaders import YoutubeLoader
 from langchain.schema import Document
 
 from youtuber.api import fetch_youtube_captions
+from youtuber import fetch_youtube_captions
+
+
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -24,6 +27,10 @@ logging.basicConfig(level=logging.INFO)
 global_chromadb = None
 global_documents = None
 global_short_documents = None
+
+video_url = "https://youtu.be/j5wVGQQ5e5A?si=3D_O4833OxvO0fRn"
+captions = fetch_youtube_captions(video_url)
+print(captions)
 
 def get_youtube_video_title(video_url):
     response = requests.get(video_url)
