@@ -24,4 +24,7 @@ tuple3 = (True, False, False)
 mytuple = ("apple", "banana", "cherry")
 print(type(mytuple))
 #_____________________________________________________________
+
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+print(thistuple)
 #_____________________________________________________________
