@@ -28,3 +28,13 @@ print(type(mytuple))
 thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
 print(thistuple)
 #_____________________________________________________________
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[-1])
+#_____________________________________________________________
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[:4])
+#_____________________________________________________________
+#_____________________________________________________________
+#_____________________________________________________________
