@@ -36,5 +36,8 @@ print(thistuple[-1])
 thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
 print(thistuple[:4])
 #_____________________________________________________________
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[-4:-1])
 #_____________________________________________________________
 #_____________________________________________________________
