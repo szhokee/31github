@@ -101,3 +101,7 @@ thistuple = ("apple", "banana", "cherry")
 for x in thistuple:
   print(x)
 #_____________________________________________________________
+  
+thistuple = ("apple", "banana", "cherry")
+for i in range(len(thistuple)):
+  print(thistuple[i])
