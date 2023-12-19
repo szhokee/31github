@@ -96,4 +96,8 @@ print(green)
 print(tropic)
 print(red)
 #_____________________________________________________________
+
+thistuple = ("apple", "banana", "cherry")
+for x in thistuple:
+  print(x)
 #_____________________________________________________________
