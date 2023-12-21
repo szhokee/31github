@@ -46,3 +46,9 @@ thisset.update(mylist)
 
 print(thisset)
 #_____________________________________________________________
+
+thisset = {"apple", "banana", "cherry"}
+
+thisset.remove("banana")
+
+print(thisset)
