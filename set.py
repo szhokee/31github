@@ -30,5 +30,12 @@ thisset.add("orange")
 
 print(thisset)
 #_____________________________________________________________
+
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+
+thisset.update(tropical)
+
+print(thisset)
 #_____________________________________________________________
 #_____________________________________________________________
